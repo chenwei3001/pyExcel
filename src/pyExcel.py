@@ -192,7 +192,11 @@ class UseExcel(object):
 
     def hide(self): 
         self.xlapp.Visible = False 
-
+        
+    def del_sheet(self,sheet):
+        sht = self.xlbook.Worksheets(sheet)
+        sht.Delete()
+        
     def convert_alphabet(self,col_num):
         '''Convert xls column number to Column Alphabet'''
         if col_num > 26:
